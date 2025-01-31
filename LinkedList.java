@@ -46,7 +46,26 @@ sc.close();
     }
 public void deleteEnd()
     {
-        // TYPE YOUR CODE HERE
+        if(head == null)
+        {
+            System.out.println("List is Empty");
+            return;
+        }
+        if(head.next ==null)
+        {
+            System.out.println("Deleted node with data:"+head.data);
+            head = null;
+            return;
+        }
+        Node temp = head;
+        Node prev = null;
+        while(temp.next!=null)
+        {
+            prev = temp;
+            temp = temp.next;
+        }
+        System.out.println("Deleted node with data:"+temp.data);
+        prev.next =null;
     }
 public void displayList() {
         Node current = head;
